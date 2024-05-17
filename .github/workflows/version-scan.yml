@@ -8,7 +8,7 @@ on:
 jobs:
   check:
     name: Check and Update Version
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Setup Python 3
         uses: actions/setup-python@v5
