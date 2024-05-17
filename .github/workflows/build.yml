@@ -22,20 +22,20 @@ jobs:
         id: find_targets
         run: |
           # sdks
-          JSON='['
-          FIRST=1
+          # JSON='['
+          # FIRST=1
 
-          while read -r line;
-          do
-            ARCH=$(echo "$line" | cut -d " " -f 1)
+          # while read -r line;
+          # do
+          #   ARCH=$(echo "$line" | cut -d " " -f 1)
 
-            [[ $FIRST -ne 1 ]] && JSON="$JSON"','
-            FIRST=0
+          #   [[ $FIRST -ne 1 ]] && JSON="$JSON"','
+          #   FIRST=0
 
-            JSON="$JSON"'{"arch":"'"$ARCH"'"}'
-          done <<< $(perl ./scripts/dump-target-info.pl architectures 2>/dev/null)
+          #   JSON="$JSON"'{"arch":"'"$ARCH"'"}'
+          # done <<< $(perl ./scripts/dump-target-info.pl architectures 2>/dev/null)
 
-          JSON="$JSON"']'
+          JSON='[{"arch":"x86_64"}]'
           echo -e "\n---- sdks ----\n"
           echo "$JSON"
           echo -e "\n---- sdks ----\n"
