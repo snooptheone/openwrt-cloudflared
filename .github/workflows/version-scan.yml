@@ -22,7 +22,7 @@ jobs:
       - name: Workaround pycurl wheel
         run: |
           sudo mkdir -p /etc/pki/tls/certs
-          sudo ln -s /etc/ssl/certs/ca-certificates.crt /etc/pki/tls/certs/ca-bundle.crt
+          sudo ln -f -s /etc/ssl/certs/ca-certificates.crt /etc/pki/tls/certs/ca-bundle.crt
 
       - name: Checkout
         uses: actions/checkout@v4
